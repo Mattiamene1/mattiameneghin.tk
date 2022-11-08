@@ -30,9 +30,9 @@ $REMOTE_REPO_URL    = "https://github.com/Mattiamene1/personalwebsite"
 $BRANCH             = "main";
 $SECRET             = "vEIQslHpFWLVmRgsPLjuJscL75MvK6W4ZZDAYRfe";
 
-if ( $_POST["payload"] && $_POST["X-Hub-Signature"] == $SECRET) {
+if ( $_POST["payload"] ) {
   // Only respond to POST requests from Github
-  shell_exec("cd /var/www/html && echo "$SECRET" > debug.txt");
+  
   if( file_exists($LOCAL_ROOT) ) {
     
     // If there is already a repo, just run a git pull to grab the latest changes
