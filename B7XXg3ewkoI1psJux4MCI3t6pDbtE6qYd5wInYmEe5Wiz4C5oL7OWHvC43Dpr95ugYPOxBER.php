@@ -26,13 +26,14 @@ $LOCAL_ROOT         = "/var/www/html_mene/mattiameneghin.tk";
 $LOCAL_REPO_NAME    = "personalwebsite";
 $LOCAL_REPO         = "{$LOCAL_ROOT}/{$LOCAL_REPO_NAME}";
 $REMOTE_REPO        = "Mattiamene1@github.com:Mattiamene1/personalwebsite.git";
+$REMOTE_REPO_URL    = "https://github.com/Mattiamene1/personalwebsite"
 $BRANCH             = "main";
 $SECRET             = "vEIQslHpFWLVmRgsPLjuJscL75MvK6W4ZZDAYRfe";
 
 if ( $_POST["payload"] && $_POST["X-Hub-Signature"] == $SECRET) {
   // Only respond to POST requests from Github
-  
-  if( file_exists($LOCAL_REPO) ) {
+  shell_exec("cd /var/www/html && echo "$SECRET" > debug.txt");
+  if( file_exists($LOCAL_ROOT) ) {
     
     // If there is already a repo, just run a git pull to grab the latest changes
     shell_exec("cd {$LOCAL_ROOT} && git pull origin main");
