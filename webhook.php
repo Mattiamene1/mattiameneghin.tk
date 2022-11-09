@@ -31,7 +31,7 @@ shell_exec("echo \"         File_exists: " . var_dump(file_exists($LOCAL_REPO . 
 if ( $_POST['payload'] ) {
   // Only respond to POST requests from Github
 
-  if( 1 == 1 ) ) {
+  if( 1 == 1 ) {
 
     shell_exec("echo \"         GIT PULL\" >> " . $LOCAL_ROOT . "/log.txt");
     // If there is already a repo, just run a git pull to grab the latest changes
