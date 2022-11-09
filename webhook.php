@@ -15,7 +15,7 @@
 **/
 
 // Set Variables
-$LOCAL_ROOT         = "/var/www/html_mene/";
+$LOCAL_ROOT         = "/var/www/html_mene";
 $LOCAL_REPO_NAME    = "mattiamaneghin.tk";
 $LOCAL_REPO         = "{$LOCAL_ROOT}/{$LOCAL_REPO_NAME}";
 $REMOTE_REPO        = "git@github.com:Mattiamene1/mattiameneghin.tk.git";
@@ -28,7 +28,7 @@ shell_exec("echo \"$date - PHP Start HERE\" >> " . $LOCAL_ROOT . "log.txt");
 if ( $_POST['payload'] ) {
   // Only respond to POST requests from Github
 
-  if( is_dir($LOCAL_REPO) ) {
+  if( file_exists($LOCAL_REPO) ) {
 
     shell_exec("echo \"       GIT PULL\" >> " . $LOCAL_ROOT . "log.txt");
     // If there is already a repo, just run a git pull to grab the latest changes
