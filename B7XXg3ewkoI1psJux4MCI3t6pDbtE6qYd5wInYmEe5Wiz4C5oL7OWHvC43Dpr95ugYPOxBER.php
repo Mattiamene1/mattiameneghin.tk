@@ -31,7 +31,7 @@ $BRANCH             = "main";
 $SECRET             = "vEIQslHpFWLVmRgsPLjuJscL75MvK6W4ZZDAYRfe";
 
 if ( $_POST["payload"] ) {
-  // Only respond to POST requests from Github
+  // Only respond to POST requests from Github 
   
   if( file_exists($LOCAL_REPO) ) {
     shell_exec("echo ***********file exists!***********")
