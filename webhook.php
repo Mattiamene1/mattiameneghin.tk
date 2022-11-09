@@ -25,7 +25,7 @@ $BRANCH             = "main";
 $date = date('Y/m/d H:i:s', time());
 shell_exec("echo \"$date - PHP Start HERE\" >> " . $LOCAL_ROOT . "log.txt");
 shell_exec("echo \"         Local repo: _ $LOCAL_REPO _\" >> " . $LOCAL_ROOT . "log.txt");
-shell_exec("echo \"         Is_dir: " . is_dir($LOCAL_REPO) . " \" >> " . $LOCAL_ROOT . "log.txt");
+// shell_exec("echo \"         Is_dir: " . is_dir($LOCAL_REPO) . " \" >> " . $LOCAL_ROOT . "log.txt");
 
 if ( $_POST['payload'] ) {
   // Only respond to POST requests from Github
