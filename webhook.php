@@ -24,20 +24,22 @@ $BRANCH             = "main";
 
 $date = date('Y/m/d H:i:s', time());
 shell_exec("echo \"$date - PHP Start HERE\" >> " . $LOCAL_ROOT . "log.txt");
+shell_exec("echo \"         Local repo: _ $LOCAL_REPO _\" >> " . $LOCAL_ROOT . "log.txt");
+shell_exec("echo \"         Is_dir: " . is_dir($LOCAL_REPO) . " \" >> " . $LOCAL_ROOT . "log.txt");
 
 if ( $_POST['payload'] ) {
   // Only respond to POST requests from Github
 
-  if( file_exists($LOCAL_REPO) ) {
+  if( is_dir($LOCAL_REPO) ) {
 
-    shell_exec("echo \"       GIT PULL\" >> " . $LOCAL_ROOT . "log.txt");
+    shell_exec("echo \"         GIT PULL\" >> " . $LOCAL_ROOT . "log.txt");
     // If there is already a repo, just run a git pull to grab the latest changes
     shell_exec("cd {$LOCAL_REPO} && git pull");
 
     // die("done " . mktime());
   } else {
 
-    shell_exec("echo \"       GIT CLONE\" >> " . $LOCAL_ROOT . "log.txt");
+    shell_exec("echo \"         GIT CLONE\" >> " . $LOCAL_ROOT . "log.txt");
     // If the repo does not exist, then clone it into the parent directory
     shell_exec("cd {$LOCAL_ROOT} && git clone {$REMOTE_REPO_URL}");
 
