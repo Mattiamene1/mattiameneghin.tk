@@ -22,21 +22,28 @@ $REMOTE_REPO        = "git@github.com:Mattiamene1/mattiameneghin.tk.git";
 $REMOTE_REPO_URL    = "https://github.com/Mattiamene1/mattiameneghin.tk.git";
 $BRANCH             = "main";
 
+$date = date('Y/m/d H:i:s', time());
+shell_exec("\"$date - PHP Start HERE\" > " . $LOCAL_ROOT . "log.txt");
+
 if ( $_POST['payload'] ) {
   // Only respond to POST requests from Github
 
   if( file_exists($LOCAL_REPO) ) {
 
+    shell_exec("\"       GIT PULL\" > " . $LOCAL_ROOT . "log.txt");
     // If there is already a repo, just run a git pull to grab the latest changes
     shell_exec("cd {$LOCAL_REPO} && git pull");
 
     die("done " . mktime());
   } else {
 
+    shell_exec("\"       GIT CLONE\" > " . $LOCAL_ROOT . "log.txt");
     // If the repo does not exist, then clone it into the parent directory
     shell_exec("cd {$LOCAL_ROOT} && git clone {$REMOTE_REPO_URL}");
 
     die("done " . mktime());
   }
 }
+
+shell_exec("\"PHP END\" > " . $LOCAL_ROOT . "log.txt");
 ?>
