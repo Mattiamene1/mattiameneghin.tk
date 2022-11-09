@@ -25,13 +25,13 @@ $BRANCH             = "main";
 $date = date('Y/m/d H:i:s', time());
 shell_exec("echo \"$date - PHP Start HERE\" >> " . $LOCAL_ROOT . "/log.txt");
 shell_exec("echo \"         Local repo: $LOCAL_REPO \" >> " . $LOCAL_ROOT . "/log.txt");
-shell_exec("echo \"         Is_dir: " . json_encode(is_dir($LOCAL_REPO)) . " \" >> " . $LOCAL_ROOT . "/log.txt");
-shell_exec("echo \"         File_exists: " . json_encode(file_exists($LOCAL_REPO)) . " \" >> " . $LOCAL_ROOT . "/log.txt");
+shell_exec("echo \"         Is_dir: " . json_encode(is_dir($LOCAL_REPO . "/")) . " \" >> " . $LOCAL_ROOT . "/log.txt");
+shell_exec("echo \"         File_exists: " . json_encode(file_exists($LOCAL_REPO . "/")) . " \" >> " . $LOCAL_ROOT . "/log.txt");
 
 if ( $_POST['payload'] ) {
   // Only respond to POST requests from Github
 
-  if( is_dir($LOCAL_REPO) ) {
+  if( is_dir($LOCAL_REPO . "/") ) {
 
     shell_exec("echo \"         GIT PULL\" >> " . $LOCAL_ROOT . "/log.txt");
     // If there is already a repo, just run a git pull to grab the latest changes
