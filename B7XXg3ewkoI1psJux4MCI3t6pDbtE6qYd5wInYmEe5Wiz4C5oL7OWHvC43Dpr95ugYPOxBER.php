@@ -40,7 +40,7 @@ if ( $_POST["payload"] ) {
 
     die("done " . mktime());
   } else {
-    
+    shell_exec("echo ##########file NOT exists!#########")
     // If the repo does not exist, then clone it into the parent directory
     shell_exec("cd {$LOCAL_ROOT} && git clone {$REMOTE_REPO}");
     
