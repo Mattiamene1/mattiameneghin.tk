@@ -25,7 +25,7 @@
 $LOCAL_ROOT         = "/var/www/html_mene";
 $LOCAL_REPO_NAME    = "mattiameneghin.tk";
 $LOCAL_REPO         = "{$LOCAL_ROOT}/{$LOCAL_REPO_NAME}";
-$REMOTE_REPO        = "Mattiamene1@github.com:Mattiamene1/personalwebsite.git";
+$REMOTE_REPO        = "git@github.com:Mattiamene1/personalwebsite.git"; //$REMOTE_REPO        = "git@github.com:username/reponame.git";
 $REMOTE_REPO_URL    = "https://github.com/Mattiamene1/personalwebsite"
 $BRANCH             = "main";
 $SECRET             = "vEIQslHpFWLVmRgsPLjuJscL75MvK6W4ZZDAYRfe";
@@ -34,13 +34,11 @@ if ( $_POST["payload"] ) {
   // Only respond to POST requests from Github 
   
   if( file_exists($LOCAL_REPO) ) {
-    shell_exec("echo ***********file exists!***********")
     // If there is already a repo, just run a git pull to grab the latest changes
-    shell_exec("cd {$LOCAL_REPO} && git pull origin $BRANCH");
+    shell_exec("cd {$LOCAL_REPO} && git pull");
 
     die("done " . mktime());
   } else {
-    shell_exec("echo ##########file NOT exists!#########")
     // If the repo does not exist, then clone it into the parent directory
     shell_exec("cd {$LOCAL_ROOT} && git clone {$REMOTE_REPO}");
     
