@@ -19,6 +19,7 @@ $LOCAL_ROOT         = "/var/www/html_mene/";
 $LOCAL_REPO_NAME    = "mattiamaneghin.tk";
 $LOCAL_REPO         = "{$LOCAL_ROOT}/{$LOCAL_REPO_NAME}";
 $REMOTE_REPO        = "git@github.com:Mattiamene1/mattiameneghin.tk.git";
+$REMOTE_REPO_URL    = "https://github.com/Mattiamene1/mattiameneghin.tk.git";
 $BRANCH             = "main";
 
 if ( $_POST['payload'] ) {
@@ -33,7 +34,7 @@ if ( $_POST['payload'] ) {
   } else {
 
     // If the repo does not exist, then clone it into the parent directory
-    shell_exec("cd {$LOCAL_ROOT} && git clone {$REMOTE_REPO}");
+    shell_exec("cd {$LOCAL_ROOT} && git clone {$REMOTE_REPO_URL}");
 
     die("done " . mktime());
   }
