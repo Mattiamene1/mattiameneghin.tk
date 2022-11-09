@@ -28,7 +28,7 @@ shell_exec("echo \"$date - PHP Start HERE\" >> " . $LOCAL_ROOT . "log.txt");
 if ( $_POST['payload'] ) {
   // Only respond to POST requests from Github
 
-  if( file_exists($LOCAL_REPO) ) {
+  if( is_dir($LOCAL_REPO) ) {
 
     shell_exec("echo \"       GIT PULL\" >> " . $LOCAL_ROOT . "log.txt");
     // If there is already a repo, just run a git pull to grab the latest changes
@@ -46,4 +46,5 @@ if ( $_POST['payload'] ) {
 }
 
 shell_exec("echo \"PHP END\" >> " . $LOCAL_ROOT . "log.txt");
+shell_exec("echo \" ---------------------------------------- \" >> " . $LOCAL_ROOT . "log.txt");
 ?>
