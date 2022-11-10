@@ -681,7 +681,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Services
+# Documents
 --------------------------------------------------------------*/
 .services .icon-box {
   margin-bottom: 20px;
@@ -707,7 +707,7 @@ section {
 }
 
 .services .icon-box:hover .icon {
-  background: #fff;
+  background: rgba(20, 157, 221, 0.95);
 }
 
 .services .icon-box:hover .icon i {
