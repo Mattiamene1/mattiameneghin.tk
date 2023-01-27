@@ -55,7 +55,7 @@
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <!-- <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li> -->
+          <li><a href="#skills" class="nav-link scrollto"><i class="bi bi-bag-check"></i> <span>Skills</span></a></li>
           <li><a href="#documents" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Documents</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
@@ -88,9 +88,7 @@
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3>Personal Data</h3>
-            <p class="fst-italic">
-            I'm passionate about IT, fitness and music. I am currently attending a bachelor's degree at the University of Trento.
-            </p>
+            <!-- <p class="fst-italic"></p> -->
             <div class="row">
               <div class="col-lg-6">
                 <ul>
@@ -109,10 +107,24 @@
                 </ul>
               </div>
             </div>
-            <h3>Computer Interests</h3>
-            <p>I'm very curious in the IT field, in particular in the internal components of the PC, in the Cloud Coumpting and in cybersecurity.</p>
-            <p>I've found a real interest in some courses in my bachelor's degree that were about the cryptographic techniques, authentication, ethical usage of passwords and of course the multi-factors authentication related.</p> 
-            <p>In my free time i'm implementing a personal project to store passwords in a secure way, through some bash script and virtual machines, ssh key to access it and an hardware token (e.g. Usb)</p>
+          </br>
+            <div>
+              <h3>Computer Interests</h3>
+              <p>I'm very curious in the IT field, in particular in the Cloud Coumpting and in cybersecurity.</br>
+                I've found a real interest in some courses in my bachelor's degree that were about the cryptographic techniques, authentication, ethical usage of passwords and of course the multi-factors authentication related.</p> 
+              <p>In my free time i'm implementing a personal project to store passwords in a secure way, through some bash script and virtual machines, ssh key to access it and an hardware token. (e.g. USK key)</p>
+            </div>
+          </br>
+            <div>
+              <h3>Future Plans</h3>
+              <p>In september 2023 I would like to enroll in Eit Digital Masterschool, In paticular the <a href="https://masterschool.eitdigital.eu/cloud-and-network-infrastructures" target="_blank">Cloud & Network Infrastructure.</a></p>
+            </div>
+          </br>
+            <div>
+              <h3>DJing Passion</h3>
+              <p>I play techno, tech-house & house music, both digital and vinyl.</p>
+              <p>I'm a founder of <a href="https://instagram.com/collettivointollerante?igshid=YmMyMTA2M2Y=" target="_blank">Collettivo Intollerante</a>, a staff that organize exclusive private events in Treviso.</p>
+            </div>
           </div>
         </div>
 
@@ -529,6 +541,11 @@
             <h4 class="title"><a href="assets/pdf/FondamentiDiSegnali.pdf">Fundamentals of Signals Notes</a></h4>
             <p class="description">Notes about <em>Fundamentals of Signals Notes</em> university course</p>
           </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon"><i class="bi bi-filetype-pdf"></i></div>
+            <h4 class="title"><a href="assets/pdf/CV-MeneghinMattia-20230127-IT.pdf">Curriculum Vitae - IT</a></h4>
+            <p class="description"><em>Curriculum Vitae</em> Italian Version</p>
+          </div>
         </div>
 
       </div>
@@ -692,7 +709,7 @@
     <div>Last Update:</br>
           <p id="actualDate"></p> 
           <script>
-            var date = new Date();
+            var date = new Date(document.lastModified) //.toISOString().substr(0, 10);
             document.getElementById("actualDate").innerHTML = date;
           </script>
         </div>  
