@@ -1,7 +1,7 @@
 <?php
 /**
  * PHP Email Form
- * Version: 3.5 
+ * Version: 3.5
  * Website: https://bootstrapmade.com/php-email-form/
  * Copyright: BootstrapMade.com
  */
