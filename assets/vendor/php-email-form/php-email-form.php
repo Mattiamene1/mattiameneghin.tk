@@ -5,9 +5,6 @@
  * Website: https://bootstrapmade.com/php-email-form/
  * Copyright: BootstrapMade.com
  */
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
 
 if ( version_compare(phpversion(), '5.5.0', '<') ) {
   die('PHP version 5.5.0 and up is required. Your PHP version is ' . phpversion());
