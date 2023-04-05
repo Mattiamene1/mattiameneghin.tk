@@ -1,7 +1,7 @@
 <?php
 /**
  * PHP Email Form
- * Version: 3.5
+ * Version: 3.5 
  * Website: https://bootstrapmade.com/php-email-form/
  * Copyright: BootstrapMade.com
  */
@@ -9,6 +9,7 @@
 if ( version_compare(phpversion(), '5.5.0', '<') ) {
   die('PHP version 5.5.0 and up is required. Your PHP version is ' . phpversion());
 }
+
 
 class PHP_Email_Form {
 
