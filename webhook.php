@@ -17,7 +17,7 @@
 // Set Variables
 $LOCAL_ROOT         = "/var/www/html";
 $LOCAL_REPO_NAME    = "mattiameneghin.tk";
-$LOCAL_REPO         = "{$LOCAL_ROOT}/{$LOCAL_REPO_NAME}";
+$LOCAL_REPO         = "/var/www/html";
 // $LOCAL_LOG          =  "{$LOCAL_ROOT}/log.txt"
 $LOCAL_LOG          =  "/log_updater.txt"
 $REMOTE_REPO        = "git@github.com:Mattiamene1/mattiameneghin.tk.git";
